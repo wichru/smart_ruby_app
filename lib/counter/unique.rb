@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Counter
-  class Total < Base
+  class Unique < Base
     protected
 
     def count(ip_array)
-      ip_array.size
+      ip_array.uniq.size
     end
   end
 end
