@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Parser do
+RSpec.describe LogParser do
   subject { described_class.new(path).call }
 
   let(:path) { 'spec/fixtures/sample.log' }
@@ -8,15 +8,25 @@ RSpec.describe Parser do
   describe '#call' do
     context 'when file is provided' do
       let(:expected_result) do
-        {
-          '/help_page/1' => ['126.318.035.038', '722.247.931.582', '646.865.545.408', '543.910.244.929'],
-          '/contact' => ['184.123.665.067', '184.123.665.067'],
-          '/home' => ['184.123.665.067', '235.313.352.950']
-        }
+        <<~TEXT
+          ------------------------
+          > list of webpages with most page views ordered from most pages views to less page views
+          ------------------------
+          /help_page/1 4 visits
+          /contact 2 visits
+          /home 2 visits
+          ------------------------
+          > list of webpages with most unique page views also ordered
+          ------------------------
+          /help_page/1 4 unique visits
+          /home 2 unique visits
+          /contact 1 unique visits
+          ------------------------
+        TEXT
       end
 
-      it 'return data' do
-        expect(subject).to eq expected_result
+      it 'print expected result' do
+        expect { subject }.to output(expected_result).to_stdout
       end
     end
 
@@ -24,7 +34,7 @@ RSpec.describe Parser do
       let(:path) { 'test' }
 
       it 'raises an error' do
-        expect { subject }.to raise_error(Parser::MissingFileError)
+        expect { subject }.to raise_error Errors::MissingFileError
       end
     end
   end
