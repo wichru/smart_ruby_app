@@ -1,4 +1,4 @@
-class PageVisits
+class PageVisitsBuilder
   def initialize(file_lines)
     @file_lines = file_lines
     @hash_array = Hash.new { [] }

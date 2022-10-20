@@ -1,4 +1,4 @@
-RSpec.describe PageVisits do
+RSpec.describe PageVisitsBuilder do
   subject { described_class.new(file_lines).call }
 
   let(:file_lines) do
