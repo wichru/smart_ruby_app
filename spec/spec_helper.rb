@@ -3,7 +3,7 @@
 require 'pry'
 require 'simplecov'
 require 'bundler/setup'
-require_relative '../parser'
+require_relative '../environment'
 
 SimpleCov.start
 
