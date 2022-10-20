@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'bundler'
+gem 'dry-monads'
 gem 'rspec'
 
 group :development, :test do
