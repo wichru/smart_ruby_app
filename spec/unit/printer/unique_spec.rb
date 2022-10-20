@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Printer::Total do
+RSpec.describe Printer::Unique do
   subject { described_class.new(sorted_array).call }
 
   describe '#call' do
@@ -13,9 +13,9 @@ RSpec.describe Printer::Total do
     end
     let(:result) do
       <<~TEXT
-        /home 21 visits
-        /help_page/1 4 visits
-        /contact 2 visits
+        /home 21 unique visits
+        /help_page/1 4 unique visits
+        /contact 2 unique visits
       TEXT
     end
 

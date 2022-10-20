@@ -1,9 +1,9 @@
 module Printer
-  class Total < Base
+  class Unique < Base
     protected
 
     def print(visit)
-      puts "#{visit[0]} #{visit[1]} visits"
+      puts "#{visit[0]} #{visit[1]} unique visits"
     end
 
     attr_reader :visits_array
