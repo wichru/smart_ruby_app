@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FileReader do
   subject { described_class.new(file_path).call }
 

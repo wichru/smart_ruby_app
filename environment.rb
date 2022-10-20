@@ -2,6 +2,7 @@
 
 # Load ruby dependencies
 require 'pry'
+require 'dry/monads/all'
 
 # Load app modules and classes
 require_relative 'lib/log_parser'

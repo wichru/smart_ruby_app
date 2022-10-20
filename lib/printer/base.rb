@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Printer
   class Base
     def initialize(visits_array)

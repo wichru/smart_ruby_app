@@ -39,8 +39,6 @@ RSpec.describe LogParser do
       expect(total_counter_instance).to have_received(:call).once
       expect(unique_counter_instance).to have_received(:call).once
       expect(hash_helper).to have_received(:sort).twice
-      # expect(total_printer_instance).to receive(:call)
-      # expect(unique_printer_instance).to receive(:call)
     end
   end
 end

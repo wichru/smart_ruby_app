@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PageVisitsBuilder
   def initialize(file_lines)
     @file_lines = file_lines

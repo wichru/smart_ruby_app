@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe PageVisitsBuilder do
   subject { described_class.new(file_lines).call }
 

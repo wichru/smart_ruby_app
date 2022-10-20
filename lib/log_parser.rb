@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-require 'dry/monads/all'
-include Dry::Monads
-
 class LogParser
+  include Dry::Monads
+
   def initialize(file_path)
     @file_path = file_path
   end

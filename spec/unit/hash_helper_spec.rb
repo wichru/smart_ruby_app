@@ -11,16 +11,10 @@ RSpec.describe HashHelper do
         '/home' => 21
       }
     end
-    let(:sorted_hash) do
-      {
-        '/home' => 21,
-        '/help_page/1' => 4,
-        '/contact' => 2
-      }
-    end
+    let(:sorted_array) { [['/home', 21], ['/help_page/1', 4], ['/contact', 2]] }
 
     it 'return total visits count' do
-      expect(subject.sort(visits_hash)).to eq sorted_hash
+      expect(subject.sort(visits_hash)).to eq sorted_array
     end
   end
 end

@@ -11,7 +11,7 @@ RSpec.describe Counter::Base do
     }
   end
 
-  it 'return total visits count' do
+  it 'raise an error' do
     expect { subject }.to raise_error NoMethodError, 'Counter failed'
   end
 end
